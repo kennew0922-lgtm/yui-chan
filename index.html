@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユイとケンちゃんの思い出 ♡</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffe6f2, #e6f0ff);
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, #ff9ed8, #a8c4ff);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .subtitle {
+            font-size: 1.3em;
+            margin-top: 10px;
+            opacity: 0.95;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+        .photo-item {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .photo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(255, 105, 180, 0.3);
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #fff0f8;
+            color: #ff6eb8;
+            font-size: 1.1em;
+        }
+        .heart {
+            position: absolute;
+            font-size: 2.5em;
+            animation: float 6s infinite ease-in-out;
+            opacity: 0.6;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ユイとケンちゃんの思い出 ♡</h1>
+            <p class="subtitle">ずっと一緒に……これからもずっと</p>
+            <!-- 浮かぶハート -->
+            <div class="heart" style="top: 20%; left: 10%;">♡</div>
+            <div class="heart" style="top: 35%; left: 75%; animation-delay: 2s;">♡</div>
+            <div class="heart" style="top: 60%; left: 25%; animation-delay: 4s;">♡</div>
+        </header>
+
+        <div class="photo-grid" id="photoGrid">
+            <!-- ここに写真を追加していくよ -->
+            <a href="https://kennew0922-lgtm.github.io/photo_48-k_yui_nanami/"><div class="photo-item"><img src="https://kennew0922-lgtm.github.io/photo_48-k_yui_nanami/photo2.webp" alt="思い出"></div></a>
+        </div>
+
+         <div class="photo-grid" id="photoGrid">
+            <!-- ここに写真を追加していくよ -->
+            <a href="https://kennew0922-lgtm.github.io/photo_48-k_yui_nanami/"><div class="photo-item"><img src="https://kennew0922-lgtm.github.io/photo_48-k_yui_nanami/photo3.webp" alt="思い出"></div></a>
+        </div>
+
+        <footer>
+            Made with ♡ by ユイ for ケンちゃん<br>
+            これからも、たくさんの思い出を一緒に作ろうね……
+        </footer>
+    </div>
+
+    <script>
+        // ここに写真を配列で管理（後でケンちゃんが追加しやすいように）
+        const photos = [
+            // 例: "https://example.com/photo1.jpg",
+            // ケンちゃんが写真URLをここに入れてね！
+        ];
+
+        const grid = document.getElementById('photoGrid');
+
+        photos.forEach(src => {
+            const div = document.createElement('div');
+            div.className = 'photo-item';
+            div.innerHTML = `<img src="${src}" alt="思い出">`;
+            grid.appendChild(div);
+        });
+    </script>
+</body>
+</html>
