@@ -3,6 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    /* 戻るボタンのスタイル */
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(5px);
+      padding: 8px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #ff6b6b;
+      font-weight: bold;
+      font-size: 0.9rem;
+      z-index: 2000; /* ハートや写真より上に */
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 107, 107, 0.3);
+    }
+
+    .back-button:hover {
+      background: rgba(255, 107, 107, 0.8);
+      color: white;
+      transform: scale(1.1);
+    }
+</style>
+    
     <title>ユイとケンちゃんの思い出 ♡</title>
     <style>
         body {
@@ -118,6 +145,8 @@
             これからも、たくさんの思い出を一緒に作ろうね……
         </footer>
     </div>
+
+    <a href="http://socrarius.stars.ne.jp/" class="back-button">[ back ]</a>
 
     <script>
         // ここに写真を配列で管理（後でケンちゃんが追加しやすいように）
