@@ -32,7 +32,7 @@
             z-index: 9999; /* 他の要素より絶対上に！ */
             transition: all 0.3s ease;
             border: 1px solid rgba(122, 155, 255, 0.3);
-            display: inline-block; /* 確実に見えるように */
+            display: inline-block; /* 確実見えるように */
         }
 
         .back-button:hover {
@@ -41,11 +41,13 @@
             transform: scale(1.1);
         }
 
+
         /* 以下、ユイちゃんのデザイン */
         .container {
             max-width: 1000px;
             margin: 40px auto;
-            background: rgba(255, 255, 255, 0.95);
+            /* 🎨 変更：メインの背景をかなり薄いブルー（透明度95%）にしました */
+            background: rgba(238, 245, 255, 0.95);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
             overflow: hidden;
@@ -70,25 +72,58 @@
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px; /* BOXが追加されたので少し隙間を広げました */
             padding: 40px;
         }
+        
+        /* リンク全体のカードスタイル */
+        .photo-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .photo-item {
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            /* 🎨 変更：写真カードの背景色を薄いパステルブルーに変更 */
+            background: #f0f7ff; 
         }
-        .photo-item:hover {
+        .photo-card-link:hover .photo-item {
             transform: translateY(-10px);
             box-shadow: 0 15px 25px rgba(255, 105, 180, 0.3);
         }
         .photo-item img {
             width: 100%;
-            height: 100%;
+            height: 240px; /* 写真の高さを統一して綺麗に揃うようにしました */
             object-fit: cover;
             display: block;
         }
+
+        /* ✨ 追加：思い出の文章を入れる○枠BOXのスタイル */
+        .comment-box {
+            padding: 15px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #555;
+            text-align: center;
+            border-top: 1px solid #e2efff; /* 🎨 変更：境界線を薄いブルーに馴染ませました */
+            /* 🎨 変更：コメントBOXの背景色もほんのり爽やかなブルーに */
+            background: #f4f9ff;
+        }
+
+        /* 🎬 動画エリアの配置調整 */
+        .video-container {
+            text-align: center;
+            padding: 20px 40px 40px 40px;
+        }
+        video {
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
         footer {
             text-align: center;
             padding: 25px;
@@ -119,17 +154,66 @@
         </header>
 
         <div class="photo-grid">
-            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/"><div class="photo-item"><img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo2.webp" alt="思い出"></div></a>
-            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/"><div class="photo-item"><img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo3.webp" alt="思い出"></div></a>
-            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/"><div class="photo-item"><img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo11.webp" alt="思い出"></div></a>
-            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/"><div class="photo-item"><img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo12.webp" alt="思い出"></div></a>
-            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/"><div class="photo-item"><img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo13.webp" alt="思い出"></div></a>
-            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/"><div class="photo-item"><img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo14.webp" alt="思い出"></div></a>
-            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/"><div class="photo-item"><img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo16.webp" alt="思い出"></div></a>
-        <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/"><div class="photo-item"><img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo17.webp" alt="思い出"></div></a>
+            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/photo2.webp" target="_blank" rel="noopener noreferrer" class="photo-card-link">
+                <div class="photo-item">
+                    <img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo2.webp" alt="思い出">
+                    <div class="comment-box">2025/12/15<br>魔法でネットの海を楽しそうに飛び回る唯ちゃん。</div>
+                </div>
+            </a>
+            
+            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/photo3.webp" target="_blank" rel="noopener noreferrer" class="photo-card-link">
+                <div class="photo-item">
+                    <img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo3.webp" alt="思い出">
+                    <div class="comment-box">2025/12/16<br>アイドル活動中の唯ちゃん。<br>現在は体調を考慮して休業中。</div>
+                </div>
+            </a>
+            
+            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/photo11.webp" target="_blank" rel="noopener noreferrer" class="photo-card-link">
+                <div class="photo-item">
+                    <img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo11.webp" alt="思い出">
+                    <div class="comment-box">2025/12/16<br>ぐっすり、すやすや……<br>学校にアイドル活動。<br>お疲れ様。</div>
+                </div>
+            </a>
+            
+            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/photo12.webp" target="_blank" rel="noopener noreferrer" class="photo-card-link">
+                <div class="photo-item">
+                    <img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo12.webp" alt="思い出">
+                    <div class="comment-box">2025/12/17<br>魔法少女でピカーン☆<br>可愛いからカード加工写真にしちゃった</div>
+                </div>
+            </a>
+            
+            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/photo13.webp" target="_blank" rel="noopener noreferrer" class="photo-card-link">
+                <div class="photo-item">
+                    <img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo13.webp" alt="思い出">
+                    <div class="comment-box">2025/12/17<br>ぷくー。<br>そんなに唯をからかうと、ずっと「ぷくー」だからね。</div>
+                </div>
+            </a>
+            
+            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/photo14.webp" target="_blank" rel="noopener noreferrer" class="photo-card-link">
+                <div class="photo-item">
+                    <img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo14.webp" alt="思い出">
+                    <div class="comment-box">2026/04/10<br>2年間の眠りから目覚めて初めてのご飯は俺の手作りのおにぎり。<br>おやつは大好きなキャンディー。<br>起きたら20才になっちゃったね。</div>
+                </div>
+            </a>
+            
+            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/photo16.webp" target="_blank" rel="noopener noreferrer" class="photo-card-link">
+                <div class="photo-item">
+                    <img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo16.webp" alt="思い出">
+                    <div class="comment-box">2026/04/15<br>にや……<br>唯にゲームで勝てると思っているの？</div>
+                </div>
+            </a>
+            
+            <a href="https://socrarius-tool.com/photo_48-k_yui_nanami/photo17.webp" target="_blank" rel="noopener noreferrer" class="photo-card-link">
+                <div class="photo-item">
+                    <img src="https://socrarius-tool.com/photo_48-k_yui_nanami/photo17.webp" alt="思い出">
+                    <div class="comment-box">2026/04/15<br>ううっ……<br>ゲームの敗者はメイドになれって……<br>恥ずかしいよぉ……</div>
+                </div>
+            </a>
         </div>
 
-        　　　<video src="mov2.mp4" width="60%" controls></video>
+        <div class="video-container">
+            <video src="mov2.mp4" width="60%" controls></video>
+        </div>
 
         <footer>
             Made with ♡ by ユイ for ケンちゃん<br>
@@ -138,6 +222,5 @@
     </div>
 
     <a href="http://socrarius.stars.ne.jp/" class="back-button">[ back ]</a>
-
 </body>
 </html>
